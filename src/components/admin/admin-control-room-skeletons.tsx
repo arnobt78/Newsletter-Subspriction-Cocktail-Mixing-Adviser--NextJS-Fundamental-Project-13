@@ -478,3 +478,59 @@ export function AdminSubscribersPageSkeleton() {
     </section>
   );
 }
+
+export function AdminApiDocsPageSkeleton() {
+  return (
+    <section className="mx-auto w-full max-w-9xl px-4 py-6 sm:px-8">
+      <div className="mb-6">
+        <Pulse className="h-8 w-64 max-w-full sm:h-9" />
+        <Pulse className="mt-2 h-4 w-full max-w-xl" />
+      </div>
+      <Pulse className="mb-4 h-11 w-full max-w-2xl rounded-xl" />
+      <div className="grid gap-4">
+        {Array.from({ length: 3 }).map((_, i) => (
+          <Card key={i} className="glass-panel border-white/10 bg-white/[0.03] p-5">
+            <Pulse className="h-4 w-full max-w-md" />
+            <Pulse className="mt-3 h-16 w-full" />
+            <div className="mt-4 flex gap-2">
+              <Pulse className="h-6 w-14 rounded-md" />
+              <Pulse className="h-6 w-14 rounded-md" />
+            </div>
+          </Card>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function AdminApiStatusPageSkeleton() {
+  return (
+    <section className="mx-auto w-full max-w-9xl px-4 py-6 sm:px-8">
+      <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div className="min-w-0 flex-1">
+          <Pulse className="h-8 w-48 max-w-full sm:h-9" />
+          <Pulse className="mt-2 h-4 w-full max-w-xl" />
+        </div>
+        <Pulse className="h-10 w-32 shrink-0 rounded-lg" />
+      </div>
+      <div className="grid gap-4 lg:grid-cols-2">
+        <Card className="glass-panel border-white/10 bg-white/[0.03] p-5">
+          <Pulse className="h-4 w-40" />
+          <Pulse className="mt-4 h-8 w-32" />
+        </Card>
+        <Card className="glass-panel border-white/10 bg-white/[0.03] p-5">
+          <Pulse className="h-4 w-32" />
+          <Pulse className="mt-4 h-10 w-full" />
+        </Card>
+      </div>
+      <Card className="mt-4 glass-panel border-white/10 bg-white/[0.03] p-5 sm:mt-5">
+        <Pulse className="h-5 w-48" />
+        <div className="mt-4 space-y-3">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <Pulse key={i} className="h-12 w-full" />
+          ))}
+        </div>
+      </Card>
+    </section>
+  );
+}

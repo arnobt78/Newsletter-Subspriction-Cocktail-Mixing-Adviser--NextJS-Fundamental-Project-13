@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { cookies } from "next/headers";
 import {
   getAdminSessionCookieName,
@@ -15,7 +16,7 @@ export type AdminDashboardGate =
       replyToEmail: string;
     };
 
-export async function getAdminDashboardGate(): Promise<AdminDashboardGate> {
+export const getAdminDashboardGate = cache(async function getAdminDashboardGate(): Promise<AdminDashboardGate> {
   if (!process.env.ADMIN_DASHBOARD_KEY) {
     return { state: "missing-env" };
   }
@@ -31,4 +32,4 @@ export async function getAdminDashboardGate(): Promise<AdminDashboardGate> {
     fromEmail: process.env.RESEND_FROM_EMAIL ?? "Not configured",
     replyToEmail: process.env.RESEND_REPLY_TO_EMAIL ?? "Not configured",
   };
-}
+});

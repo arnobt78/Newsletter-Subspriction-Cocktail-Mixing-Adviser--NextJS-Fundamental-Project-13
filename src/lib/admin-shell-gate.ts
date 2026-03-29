@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { cookies } from "next/headers";
 import {
   getAdminSessionCookieName,
@@ -13,7 +14,7 @@ export type AdminShellGate =
  * Fast gate for admin layout: env + session cookie only (no Redis / summary).
  * Use this so sidebar + top bar render without waiting on control-room data.
  */
-export async function getAdminShellGate(): Promise<AdminShellGate> {
+export const getAdminShellGate = cache(async function getAdminShellGate(): Promise<AdminShellGate> {
   if (!process.env.ADMIN_DASHBOARD_KEY) {
     return { state: "missing-env" };
   }
@@ -23,4 +24,4 @@ export async function getAdminShellGate(): Promise<AdminShellGate> {
     return { state: "unauthenticated" };
   }
   return { state: "authenticated" };
-}
+});

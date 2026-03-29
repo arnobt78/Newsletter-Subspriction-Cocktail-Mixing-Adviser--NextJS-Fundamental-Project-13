@@ -1469,10 +1469,7 @@ export function BroadcastComposer({
       </AlertDialog>
       {viewDetail.open ? (
         <AlertDialog open className="z-[80]">
-          <AlertDialogOverlay
-            className="cursor-default"
-            onClick={() => setViewDetail({ open: false })}
-          />
+          <AlertDialogOverlay className="cursor-default" />
           <AlertDialogContent className="glass-panel left-1/2 top-1/2 h-[80vh] w-[80vw] max-h-[80vh] max-w-[80vw] -translate-x-1/2 -translate-y-1/2 flex flex-col overflow-hidden p-0">
             <div className="flex items-start justify-between gap-3 border-b border-white/10 px-4 sm:px-8 py-4 sm:py-6">
               <div className="min-w-0 flex-1 pr-2">

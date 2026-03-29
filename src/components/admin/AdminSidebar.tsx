@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { type ComponentType } from "react";
 import {
+  Activity,
+  BookOpen,
   ChevronsLeft,
   ChevronsRight,
   Heart,
@@ -39,6 +41,23 @@ const MAIN_NAV: readonly {
     href: "/admin/control-room/subscribers",
     label: "Subscribers Management",
     icon: Users,
+  },
+] as const;
+
+const PROJECT_API_NAV: readonly {
+  href: string;
+  label: string;
+  icon: ComponentType<{ className?: string }>;
+}[] = [
+  {
+    href: "/admin/control-room/api-docs",
+    label: "API Documentation",
+    icon: BookOpen,
+  },
+  {
+    href: "/admin/control-room/api-status",
+    label: "API Status",
+    icon: Activity,
   },
 ] as const;
 
@@ -122,6 +141,33 @@ export function AdminSidebar() {
           item.href === "/admin/control-room"
             ? pathname === "/admin/control-room"
             : pathname === item.href || pathname.startsWith(`${item.href}/`);
+        return (
+          <SidebarLinkRow
+            key={item.href}
+            href={item.href}
+            label={item.label}
+            Icon={item.icon}
+            active={active}
+            collapsed={effectiveCollapsed}
+          />
+        );
+      })}
+    </>
+  );
+
+  const projectApiNavBody = (
+    <>
+      <p
+        className={cn(
+          "mb-2 px-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500",
+          effectiveCollapsed && "hidden",
+        )}
+      >
+        Project API
+      </p>
+      {PROJECT_API_NAV.map((item) => {
+        const active =
+          pathname === item.href || pathname.startsWith(`${item.href}/`);
         return (
           <SidebarLinkRow
             key={item.href}
@@ -223,6 +269,9 @@ export function AdminSidebar() {
 
       <nav className="flex flex-1 flex-col gap-1 overflow-y-auto p-1 md:p-2">
         {mainNavBody}
+        <div className="mt-2 border-t border-white/10 pt-2 md:mt-3 md:pt-3">
+          {projectApiNavBody}
+        </div>
         {siteSection}
       </nav>
     </aside>

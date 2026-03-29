@@ -27,6 +27,7 @@ export async function POST(
   const body = (await request.json()) as { brief?: string };
   try {
     const data = await generateComposerDraftWithFallback(body.brief ?? "");
+    console.info("[composer-assist] providerUsed=%s", data.providerUsed);
     return NextResponse.json({ ok: true, data });
   } catch (e) {
     const message = e instanceof Error ? e.message : "AI request failed.";
