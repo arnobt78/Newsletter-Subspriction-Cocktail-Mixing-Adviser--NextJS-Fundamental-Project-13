@@ -1,7 +1,5 @@
 # Cocktail Mixer & Newsletter Platform – Next.js, React, TypeScript, CocktailDB API, Tailwind CSS, Framer Motion Fundamental Project 13 (including Admin Control Room)
 
-A full-stack, educational cocktail discovery app built with the **Next.js App Router**, **React**, and **TypeScript**. It combines public pages (search, cocktail details, favorites, newsletter signup) with a production-style **newsletter pipeline** (double opt-in, unsubscribe, rate limits) and an **Admin Control Room** for campaigns, subscribers, AI-assisted drafting, and live API diagnostics. Data flows from **TheCocktailDB** API and optional **Upstash Redis** + **Resend** for email and storage—so you can run a minimal UI-only mode or a complete “mini product” locally or on Vercel.
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.1-blue)](https://react.dev/)
@@ -11,6 +9,8 @@ A full-stack, educational cocktail discovery app built with the **Next.js App Ro
 [![Framer Motion](https://img.shields.io/badge/Framer%20Motion-12-0055ff)](https://www.framer.com/motion/)
 [![Resend](https://img.shields.io/badge/Resend-6.9.4-0055ff)](https://resend.com/)
 [![Upstash Redis](https://img.shields.io/badge/Upstash%20Redis-1.37.0-0055ff)](https://upstash.com/)
+
+A full-stack, educational cocktail discovery app built with the **Next.js App Router**, **React**, and **TypeScript**. It combines public pages (search, cocktail details, favorites, newsletter signup) with a production-style **newsletter pipeline** (double opt-in, unsubscribe, rate limits) and an **Admin Control Room** for campaigns, subscribers, AI-assisted drafting, and live API diagnostics. Data flows from **TheCocktailDB** API and optional **Upstash Redis** + **Resend** for email and storage—so you can run a minimal UI-only mode or a complete “mini product” locally or on Vercel.
 
 - **Live Demo:** [https://cocktails-newsletter.vercel.app](https://cocktails-newsletter.vercel.app)
 
